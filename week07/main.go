@@ -18,14 +18,13 @@ func main() {
 		log.Fatal(err)
 	} else {
 		score = strings.TrimSpace(score)                //줄바꿈, 띄어쓰기 ,탭 등 제거 파이썬의 strip과 유사
-		realScore, _ := strconv.ParseInt(score, 16, 32) // 정수형 32비트 타입으로 형변환
-
-		if realScore >= 60 {
-			fmt.Println("A")
-			fmt.Println("%d", realScore)
+		realScore, _ := strconv.ParseInt(score, 10, 32) // 10진수로 입력받음 ,정수형 32비트 타입으로 형변환
+		var grade string
+		if realScore >= 90 {
+			grade = "A"
 		} else {
-			fmt.Println("BCDF")
-			fmt.Println("%d", realScore)
+			grade = "BCDF"
 		}
+		fmt.Printf("%d점은 %s등급 입니다\n", realScore, grade)
 	}
 }

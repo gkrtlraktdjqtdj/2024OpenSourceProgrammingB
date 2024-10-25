@@ -16,7 +16,9 @@ func main() {
 	answer := rand.Intn(6) + 1 // dice 1~6
 	fmt.Println(answer)
 
-	for guesses := 0; guesses < 3; guesses++ {
+	var win bool
+	win = false
+	for guesses := 0; guesses < 3; guesses++ { //  소괄호가 빠진다, if문도 마찬가지
 		fmt.Printf("%d번의 기회가 남았습니다 숫자 입력 : ", 3-guesses)
 		in := bufio.NewReader(os.Stdin)
 		input, err := in.ReadString('\n')
@@ -39,5 +41,10 @@ func main() {
 		} else {
 			fmt.Println("입력하신 값이 큽니다")
 		}
+	}
+	if win {
+		fmt.Println("당신이 이겼습니다")
+	} else {
+		fmt.Printf("당신이 졌습니다 정답은 %d입니다\n", answer)
 	}
 }

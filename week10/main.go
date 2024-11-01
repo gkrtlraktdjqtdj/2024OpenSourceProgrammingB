@@ -18,22 +18,22 @@ func main() {
 	}
 
 	number = strings.TrimSpace(number)
-	n, _ := strconv.Atoi(number)
+	n, err := strconv.Atoi(number)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	counts := 0
-	i := 1
-	for i <= n {
+	i := 2
+	for i < n {
 		if n%i == 0 {
 			counts = counts + 1
 		}
 		i++
 	}
-	if counts == 2 {
-		fmt.Printd("%d는 소수입니다", n)
+	if counts == 0 {
+		fmt.Printf("%d는(은) 소수입니다.", n)
 	} else {
-		fmt.Printd("%d는 소수가 아닙니다", n)
+		fmt.Printf("%d는(은) 소수가 아닙니다!", n)
 	}
 }

@@ -12,7 +12,7 @@ func main() {
 	fmt.Printf("%T\n", r)
 
 	i := 1
-	for i <= 10 {
+	for i <= 10 { //while
 		fmt.Printf("%2d점\n", i)
 		i = i + 1
 	}

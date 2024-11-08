@@ -32,6 +32,7 @@ func isPrime(n int) bool {
 		}
 	}
 	return true
+
 }
 func main() {
 	fmt.Printf("%f\n", math.Sqrt(25.0))

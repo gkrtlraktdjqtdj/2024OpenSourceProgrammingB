@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
-	"week11/week11/keyboard"
+
+	"github.com/headfirstgo/keyboard"
+	//"week11/week11/keyboard"
 )
 
 func main() {

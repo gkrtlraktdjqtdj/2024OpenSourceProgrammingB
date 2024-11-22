@@ -12,5 +12,5 @@ func main() {
 	gpas[2] = 2.71
 	//gpa_slice = append(gpa_slice, 4.3)
 	gpa_slice = append(gpa_slice, 4.3, 5.55)
-	fmt.Println(len(gpa_slice), gpa_slice, gpas)
+	fmt.Println(len(gpa_slice), gpa_slice, gpas) // 배열 크기의 관계가 배열 >= 슬라이스일 땐 한쪽을 바꾸면 둘 다바뀌지만 슬라이스의 크기가 배열의 크기보다 커지면 슬라이스가 따로 저장공간을 할당받는다
 }

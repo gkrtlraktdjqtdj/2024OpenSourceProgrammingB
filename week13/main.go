@@ -2,22 +2,22 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"reflect"
 )
 
-func main() {
-	var emptySlice []bool
-	//emptySlice = make([]bool, 5)
-	fmt.Printf("%#v %d\n", emptySlice, len(emptySlice)) //슬라이스의 제로벨류는 nil값, 빈 슬라이스의 길이는 0
-	if len(emptySlice) == 0 {
-		emptySlice = append(emptySlice, true)
-	}
-	fmt.Printf("%#v %d\n", emptySlice, len(emptySlice)) // []bool(true), 1
+// func test(strs string) {
+// func test(strs ...string, i int) { //error
+func test(i int, strs ...string) { //가변매게변수는 항상 맨뒤에 있어야 함
+	fmt.Println(i, strs, reflect.TypeOf(strs))
+}
 
-	gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // array := array litaral
-	gpa_slice := gpas[1:4]                       // [3.5, 4.1, 3.9]
-	//gpa_slice[1] = 2.71
-	gpas[2] = 2.71
-	//gpa_slice = append(gpa_slice, 4.3)
-	gpa_slice = append(gpa_slice, 4.3, 5.55)
-	fmt.Println(len(gpa_slice), gpa_slice, gpas)
+func main() {
+	//fmt.Println(os.Args, len(os.Args), reflect.TypeOf(os.Args)) // go run main.go I Love You // ./main.exe U love me 리눅스 스타일
+	slices := os.Args[1:] //커멘드창에 직접 입력
+	fmt.Println(slices, slices[2])
+	test(1, "123")
+	test(-99, "123", "abc")
+	test(20)
+	test(45, "123", "abc", "123a")
 }

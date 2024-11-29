@@ -1,29 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	ages := make(map[string]int)
-
-	var name string
-	var age int
-	for {
-		fmt.Print("Name? ")
-		fmt.Scanln(&name)
-		if name == "q" {
-			break
-		}
-		fmt.Print("Age? ")
-		fmt.Scanln(&age)
-
-		ages[name] = age
+	var student struct {
+		id   int
+		name string
+		gpa  float32
 	}
-	for key, value := range ages {
-		fmt.Printf("%s is %d years old\n", key, value) //value = key[ages] or ages[key]
+
+	student.id = 202444051
+	student.name = "son heungmin"
+	student.gpa = 4.5
+	fmt.Println(student.gpa)
+
+	var student2 struct {
+		id   int
+		name string
+		gpa  float32
 	}
-	//슬라이스는 배열과 달리 한타입만 넣을 수 있다
-	//create map (like) python dict
-	//go map은 순서 개념이 없다
+	student2.id = 202444052
+	student2.name = "seo jihye"
+	student2.gpa = 4.4
+	fmt.Println(student2.gpa)
+	// 슬라이스 ,멥은 한가지 타입만 할당받을 수 있다
+	// map[string]int map[key type]value type
+	// %#v = reflet.typrOf()
 }
